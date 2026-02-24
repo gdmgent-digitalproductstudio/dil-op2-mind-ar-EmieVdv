@@ -16,13 +16,13 @@ De AR-laag is inhoudelijk verbonden met het onderwerp:
 
 De applicatie bestaat uit drie pagina’s:
 
-index.html
+index.html:
 Startpagina met navigatie naar de twee AR-pagina's.
 
-image.html
+image.html:
 Image tracking pagina voor de trading cards.
 
-face.html
+face.html:
 Face tracking pagina waarin de gebruiker zweetbandjes kan dragen en de trofee kan vastnemen.
 
 ### Image Tracking (image.html)
