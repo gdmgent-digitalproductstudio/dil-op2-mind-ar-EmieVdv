@@ -3,13 +3,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Be a Player</title>
+    <title>Be the Player</title>
 
     <link rel="stylesheet" href="css/main.css" />
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+    <script src="scripts/face.js"></script>
   </head>
   <body>
     <a-scene
@@ -22,38 +23,59 @@
     >
       <a-camera active="false" position="0 0 0"></a-camera>
 
+      <a-light type="spot" intensity="100" position="0 0 0"></a-light>
+
       <a-assets>
         <img id="headband1" src="assets/images/headband1.png" />
         <img id="headband2" src="assets/images/headband2.png" />
-        <a-asset-item id="trophyModel" src="assets/scene.gltf"></a-asset-item>
+        <a-asset-item id="trophyModel" src="./assets/trophy.glb"></a-asset-item>
       </a-assets>
 
       <a-entity mindar-face-target="anchorIndex: 10">
-        <!-- <a-plane
-          src="#headband1"
-          width="1.1"
-          height="0.4"
-          position="0 0.05 0.03"
-          rotation="-10 0 0"
-          material="transparent: true"
-        ></a-plane> -->
         <a-plane
+          id="band1"
+          src="#headband1"
+          width="1"
+          height="0.8"
+          position="0 0 0.03"
+          rotation="-10 0 0"
+          material="transparent: true; shader: flat"
+        ></a-plane>
+        <a-plane
+          id="band2"
           src="#headband2"
           width="1.1"
           height="1.1"
           position="0 0.05 0.03"
           rotation="-10 0 0"
-          material="transparent: true"
+          material="transparent: true; shader: flat"
+          visible="false"
         ></a-plane>
 
         <a-gltf-model
           src="#trophyModel"
-          position="0 0 0"
-          scale="10 10 10"
+          position="0 -2 0"
+          scale="0.5 0.5 0.5"
           rotation="0 0 0"
         >
         </a-gltf-model>
       </a-entity>
     </a-scene>
+    <a
+      id="backButton"
+      class="btn secondary detail back-button"
+      href="index.html"
+    >
+      <img
+        src="assets/images/arrow.svg"
+        alt="Back"
+      />
+    </a>
+    <button
+      id="toggleBand"
+      class="btn secondary detail"
+    >
+      Switch headband
+    </button>
   </body>
 </html>

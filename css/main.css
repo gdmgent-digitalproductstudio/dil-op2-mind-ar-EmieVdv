@@ -6,8 +6,8 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, 
-*::before, 
+*,
+*::before,
 *::after {
   box-sizing: border-box;
 }
@@ -17,6 +17,9 @@
 */
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /*
@@ -40,7 +43,11 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   width: 100%;
 }
@@ -48,13 +55,229 @@ img, picture, video, canvas, svg {
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
+
+
+body {
+  background: #0a0a0a;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Hide the A-Frame VR button in AR scenes */
+.a-enter-vr,
+.a-enter-vr-button {
+  display: none !important;
+}
+
+/* Background effects */
+.background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(249, 115, 22, 0.1);
+  border-radius: 50%;
+  filter: blur(120px);
+}
+
+.glow-top {
+  top: 0;
+  left: 25%;
+}
+
+.glow-bottom {
+  bottom: 0;
+  right: 25%;
+}
+
+/* Court grid */
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+}
+
+.line.horizontal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: white;
+}
+
+.line.vertical {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: white;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 250px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Layout */
+.container {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: linear-gradient(to bottom, white, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-line {
+  height: 4px;
+  background: linear-gradient(to right, transparent, #f97316, transparent);
+  margin: 0.5rem 0;
+}
+
+header p {
+  color: #f97316;
+  letter-spacing: 1px;
+}
+
+/* Card */
+.card-wrapper {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+}
+
+.card-glow {
+  position: absolute;
+  inset: -4px;
+  background: linear-gradient(to right, #f97316, #fb923c);
+  border-radius: 16px;
+  filter: blur(12px);
+  opacity: 0.3;
+}
+
+.card {
+  position: relative;
+  background: #111;
+  border: 2px solid rgba(249, 115, 22, 0.4);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(to bottom right, #f97316, #fb923c);
+  color: black;
+}
+
+.btn.primary:hover {
+  background: black;
+  border: 2px solid #f97316;
+  color: white;
+}
+
+.btn.secondary {
+  border: 2px solid #f97316;
+  color: white;
+  background: black;
+}
+
+.btn.secondary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(249,115,22,0.3);
+}
+
+.detail {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 10;
+}
+
+.detail.back-button {
+  top: 20px;
+  bottom: auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 1rem;
+  font-size: 0.8rem;
+  color: #777;
+}
+

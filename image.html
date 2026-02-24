@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Card Scanner</title>
+    <title>Players Cards AR</title>
 
     <link rel="stylesheet" href="css/main.css" />
 
@@ -19,6 +19,7 @@
       renderer="colorManagement: true, physicallyCorrectLights"
       device-orientation-permission-ui="enabled: false"
       vr-mode-ui="enabled: false"
+      
     >
       <a-assets>
         <img id="player0" src="assets/images/allemand.png" />
@@ -424,5 +425,25 @@
 
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     </a-scene>
+    <a
+      id="backButton"
+      class="btn secondary detail back-button"
+      href="index.html"
+    >
+      <img
+        src="assets/images/arrow.svg"
+        alt="Back"
+      />
+    </a>
+    <button
+      id="muteButton"
+      class="btn secondary detail"
+    >
+      <img
+        id="muteIcon"
+        src="assets/images/unmute.svg"
+        alt="Toggle audio"
+      />
+    </button>
   </body>
 </html>
