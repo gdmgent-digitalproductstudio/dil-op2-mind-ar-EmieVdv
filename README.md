@@ -3,7 +3,7 @@
 ## Concept
 
 Voor deze opdracht koos ik als onderwerp NBA en WNBA trading cards.
-OP de trading cards staan foto's van spelers met hun naam en team. Ik heb ervoor gezorgd dat deze kaarten worden uitgebreid door ook de statistieken (punten, rebounds, assist) te laten zien.
+Op de trading cards staan foto's van spelers met hun naam en team. Ik heb ervoor gezorgd dat deze kaarten worden uitgebreid door ook de statistieken (punten, rebounds, assist) te laten zien.
 
 De AR-laag is inhoudelijk verbonden met het onderwerp:
 
